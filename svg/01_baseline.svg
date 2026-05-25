@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 210">
+  <defs>
+    <marker id="ab" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#7b9fd4"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="210" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="1.5" font-family="system-ui,sans-serif">BASELINE — DIRECT API CALL</text>
+
+  <!-- Your Application -->
+  <rect x="80" y="82" width="170" height="52" rx="8" fill="#1e2235" stroke="#3d5a8a" stroke-width="1.5"/>
+  <text x="165" y="114" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="500" font-family="system-ui,sans-serif">Your Application</text>
+
+  <!-- Groq LLM -->
+  <rect x="550" y="82" width="170" height="52" rx="8" fill="#1e2235" stroke="#3d5a8a" stroke-width="1.5"/>
+  <text x="635" y="114" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="500" font-family="system-ui,sans-serif">Groq LLM</text>
+
+  <!-- Forward: App → Groq -->
+  <line x1="252" y1="98" x2="548" y2="98" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="400" y="90" text-anchor="middle" fill="#7b9fd4" font-size="12" font-family="system-ui,sans-serif">Direct API Call</text>
+
+  <!-- Return: Groq → App -->
+  <line x1="548" y1="120" x2="252" y2="120" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="400" y="146" text-anchor="middle" fill="#22c55e" font-size="12" font-family="system-ui,sans-serif">Response</text>
+
+  <!-- Caption -->
+  <text x="400" y="192" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui,sans-serif">No gateway · No logging · No retry · No fallback</text>
+</svg>

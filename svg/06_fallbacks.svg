@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380">
+  <defs>
+    <marker id="ab" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#7b9fd4"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#22c55e"/>
+    </marker>
+    <marker id="ar" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="380" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="460" y="28" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="1.5" font-family="system-ui,sans-serif">FALLBACK — PRIMARY FAILS, BACKUP ACTIVATES</text>
+
+  <!-- Your App (center x=110) -->
+  <rect x="35" y="158" width="150" height="54" rx="8" fill="#1e2235" stroke="#3d5a8a" stroke-width="1.5"/>
+  <text x="110" y="190" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="500" font-family="system-ui,sans-serif">Your App</text>
+
+  <!-- Portkey Gateway (center x=420) -->
+  <rect x="345" y="158" width="150" height="54" rx="8" fill="#0d1f3c" stroke="#3b82f6" stroke-width="2"/>
+  <text x="420" y="180" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="600" font-family="system-ui,sans-serif">Portkey</text>
+  <text x="420" y="198" text-anchor="middle" fill="#60a5fa" font-size="11" font-family="system-ui,sans-serif">Gateway</text>
+
+  <!-- Primary 70B (upper right, failing) -->
+  <rect x="700" y="72" width="185" height="54" rx="8" fill="#2d0f0f" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="792" y="94" text-anchor="middle" fill="#fca5a5" font-size="13" font-weight="600" font-family="system-ui,sans-serif">Primary Model</text>
+  <text x="792" y="112" text-anchor="middle" fill="#ef4444" font-size="11" font-family="system-ui,sans-serif">70B · Error / Unavailable</text>
+
+  <!-- Fallback 8B (lower right, success) -->
+  <rect x="700" y="254" width="185" height="54" rx="8" fill="#0a2518" stroke="#22c55e" stroke-width="2"/>
+  <text x="792" y="276" text-anchor="middle" fill="#86efac" font-size="13" font-weight="600" font-family="system-ui,sans-serif">Fallback Model</text>
+  <text x="792" y="294" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">8B · Fast &amp; Available ✓</text>
+
+  <!-- App → Portkey -->
+  <line x1="187" y1="182" x2="343" y2="182" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="265" y="174" text-anchor="middle" fill="#7b9fd4" font-size="11" font-family="system-ui,sans-serif">Request</text>
+
+  <!-- Portkey → Primary (upper diagonal) -->
+  <line x1="495" y1="172" x2="698" y2="118" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="590" y="133" text-anchor="middle" fill="#7b9fd4" font-size="11" font-family="system-ui,sans-serif">Try Primary</text>
+
+  <!-- Primary → Portkey (error return, upper) -->
+  <line x1="698" y1="138" x2="495" y2="182" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ar)"/>
+  <text x="596" y="176" text-anchor="middle" fill="#ef4444" font-size="11" font-family="system-ui,sans-serif">Auth Error / 500</text>
+
+  <!-- Error badge on Primary -->
+  <circle cx="698" cy="99" r="14" fill="#2d0f0f" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="698" y="105" text-anchor="middle" fill="#ef4444" font-size="16" font-family="system-ui,sans-serif">✕</text>
+
+  <!-- Portkey → Fallback (lower diagonal) -->
+  <line x1="495" y1="202" x2="698" y2="266" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="590" y="250" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">Auto Fallback</text>
+
+  <!-- Fallback → Portkey (success return) -->
+  <line x1="698" y1="286" x2="495" y2="213" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="598" y="268" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">200 OK ✓</text>
+
+  <!-- Success badge on Fallback -->
+  <circle cx="698" cy="281" r="14" fill="#0a2518" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="698" y="287" text-anchor="middle" fill="#22c55e" font-size="16" font-family="system-ui,sans-serif">✓</text>
+
+  <!-- Portkey → App (final response) -->
+  <line x1="343" y1="202" x2="187" y2="202" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="265" y="224" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">Response</text>
+
+  <!-- Caption -->
+  <text x="460" y="358" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui,sans-serif">No code changes · Portkey handles the switch · App always gets a response</text>
+</svg>

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520">
+  <defs>
+    <marker id="ab" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#7b9fd4"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#22c55e"/>
+    </marker>
+    <marker id="ar" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="ap" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#818cf8"/>
+    </marker>
+    <marker id="av" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="520" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="480" y="28" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="1.5" font-family="system-ui,sans-serif">PRODUCTION CONFIG — EVERYTHING COMBINED</text>
+
+  <!-- ── Row 1: App + Portkey ── -->
+
+  <!-- Your App (center x=100) -->
+  <rect x="30" y="60" width="140" height="54" rx="8" fill="#1e2235" stroke="#3d5a8a" stroke-width="1.5"/>
+  <text x="100" y="83" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="500" font-family="system-ui,sans-serif">Your App</text>
+  <text x="100" y="100" text-anchor="middle" fill="#64748b" font-size="10" font-family="system-ui,sans-serif">one API call</text>
+
+  <!-- Portkey Gateway (center x=330, wide) -->
+  <rect x="210" y="55" width="240" height="64" rx="8" fill="#0d1f3c" stroke="#3b82f6" stroke-width="2"/>
+  <text x="330" y="78" text-anchor="middle" fill="#93c5fd" font-size="14" font-weight="700" font-family="system-ui,sans-serif">Portkey Gateway</text>
+  <text x="290" y="95" fill="#60a5fa" font-size="10" font-family="system-ui,sans-serif">timeout · retry · cache · fallback</text>
+
+  <!-- Dashboard (center x=620) -->
+  <rect x="560" y="60" width="160" height="54" rx="8" fill="#1a1040" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="640" y="83" text-anchor="middle" fill="#c4b5fd" font-size="13" font-weight="600" font-family="system-ui,sans-serif">Dashboard</text>
+  <text x="640" y="100" text-anchor="middle" fill="#a78bfa" font-size="10" font-family="system-ui,sans-serif">all requests logged</text>
+
+  <!-- App → Portkey -->
+  <line x1="172" y1="82" x2="208" y2="82" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="190" y="75" text-anchor="middle" fill="#7b9fd4" font-size="10" font-family="system-ui,sans-serif">Request</text>
+
+  <!-- Portkey → Dashboard (dashed) -->
+  <line x1="452" y1="82" x2="558" y2="82" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ap)"/>
+  <text x="505" y="75" text-anchor="middle" fill="#818cf8" font-size="10" font-family="system-ui,sans-serif">auto-log</text>
+
+  <!-- ── Row 2: Cache check ── -->
+
+  <!-- Cache diamond (center x=330, y=190) -->
+  <polygon points="330,155 410,190 330,225 250,190" fill="#1a0e38" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="330" y="186" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="600" font-family="system-ui,sans-serif">Cache</text>
+  <text x="330" y="200" text-anchor="middle" fill="#a78bfa" font-size="10" font-family="system-ui,sans-serif">Hit?</text>
+
+  <!-- Portkey → Cache (vertical) -->
+  <line x1="330" y1="121" x2="330" y2="153" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+
+  <!-- Cache YES → instant response (right) -->
+  <rect x="460" y="168" width="185" height="44" rx="8" fill="#1a0e38" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="552" y="186" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="600" font-family="system-ui,sans-serif">Cached Response</text>
+  <text x="552" y="202" text-anchor="middle" fill="#a78bfa" font-size="10" font-family="system-ui,sans-serif">⚡ instant · zero LLM cost</text>
+
+  <!-- Cache → YES box -->
+  <line x1="412" y1="190" x2="458" y2="190" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#av)"/>
+  <text x="435" y="183" text-anchor="middle" fill="#8b5cf6" font-size="10" font-weight="600" font-family="system-ui,sans-serif">YES</text>
+
+  <!-- Cache YES → App (response back left) -->
+  <line x1="460" y1="178" x2="172" y2="102" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,2" marker-end="url(#ag)"/>
+  <text x="290" y="128" text-anchor="middle" fill="#22c55e" font-size="10" font-family="system-ui,sans-serif">fast response</text>
+
+  <!-- ── Row 3: Primary model ── -->
+
+  <!-- Primary Model 70B (center x=200, y=310) -->
+  <rect x="110" y="288" width="180" height="54" rx="8" fill="#1e2235" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="200" y="310" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="600" font-family="system-ui,sans-serif">Primary Model</text>
+  <text x="200" y="328" text-anchor="middle" fill="#60a5fa" font-size="10" font-family="system-ui,sans-serif">70B · High quality</text>
+
+  <!-- Cache → Primary (NO path) -->
+  <line x1="300" y1="227" x2="225" y2="286" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="238" y="250" text-anchor="middle" fill="#7b9fd4" font-size="10" font-weight="600" font-family="system-ui,sans-serif">NO</text>
+
+  <!-- Timeout badge -->
+  <rect x="42" y="298" width="64" height="18" rx="4" fill="#1e3050" stroke="#3b82f6" stroke-width="1"/>
+  <text x="74" y="311" text-anchor="middle" fill="#7b9fd4" font-size="9" font-family="system-ui,sans-serif">timeout: 30s</text>
+
+  <!-- Primary → success path (right) -->
+  <line x1="292" y1="308" x2="440" y2="308" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="366" y="300" text-anchor="middle" fill="#22c55e" font-size="10" font-family="system-ui,sans-serif">Success ✓</text>
+
+  <!-- Success → cache + return -->
+  <rect x="442" y="288" width="175" height="40" rx="8" fill="#0a2518" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="530" y="308" text-anchor="middle" fill="#86efac" font-size="11" font-weight="600" font-family="system-ui,sans-serif">Cache &amp; Return</text>
+  <text x="530" y="322" text-anchor="middle" fill="#4ade80" font-size="10" font-family="system-ui,sans-serif">store + respond</text>
+
+  <!-- Cache+Return → App -->
+  <line x1="530" y1="286" x2="172" y2="110" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,2" marker-end="url(#ag)"/>
+
+  <!-- Primary → error path (below) -->
+  <line x1="200" y1="344" x2="200" y2="390" stroke="#ef4444" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="240" y="375" fill="#ef4444" font-size="10" font-family="system-ui,sans-serif">429 / 500</text>
+
+  <!-- ── Row 4: Retry + Fallback ── -->
+
+  <!-- Retry box -->
+  <rect x="110" y="392" width="180" height="44" rx="8" fill="#111827" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="200" y="414" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600" font-family="system-ui,sans-serif">Retry n times</text>
+  <text x="200" y="428" text-anchor="middle" fill="#d97706" font-size="10" font-family="system-ui,sans-serif">exponential backoff</text>
+
+  <!-- Retry → Fallback -->
+  <line x1="292" y1="414" x2="376" y2="414" stroke="#ef4444" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="334" y="407" text-anchor="middle" fill="#ef4444" font-size="10" font-family="system-ui,sans-serif">all fail</text>
+
+  <!-- Fallback 8B -->
+  <rect x="378" y="392" width="180" height="44" rx="8" fill="#0a2518" stroke="#22c55e" stroke-width="2"/>
+  <text x="468" y="414" text-anchor="middle" fill="#86efac" font-size="12" font-weight="600" font-family="system-ui,sans-serif">Fallback Model</text>
+  <text x="468" y="428" text-anchor="middle" fill="#22c55e" font-size="10" font-family="system-ui,sans-serif">8B · always available</text>
+
+  <!-- Fallback → return to App -->
+  <line x1="560" y1="414" x2="720" y2="414" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <rect x="722" y="392" width="160" height="44" rx="8" fill="#0a2518" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="802" y="414" text-anchor="middle" fill="#86efac" font-size="12" font-weight="600" font-family="system-ui,sans-serif">Cache &amp; Return</text>
+  <text x="802" y="428" text-anchor="middle" fill="#4ade80" font-size="10" font-family="system-ui,sans-serif">user gets a response</text>
+
+  <!-- Fallback return → App (far arrow back) -->
+  <line x1="720" y1="398" x2="172" y2="112" stroke="#22c55e" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#ag)"/>
+
+  <!-- ── Labels on right side ── -->
+  <text x="830" y="200" fill="#64748b" font-size="11" font-weight="600" font-family="system-ui,sans-serif">Config Summary</text>
+  <text x="830" y="220" fill="#7b9fd4" font-size="10" font-family="system-ui,sans-serif">Timeout: 30s</text>
+  <text x="830" y="236" fill="#7b9fd4" font-size="10" font-family="system-ui,sans-serif">Retry: 2x on 429/500</text>
+  <text x="830" y="252" fill="#7b9fd4" font-size="10" font-family="system-ui,sans-serif">Traffic: 80/20 split</text>
+  <text x="830" y="268" fill="#7b9fd4" font-size="10" font-family="system-ui,sans-serif">Cache: simple mode</text>
+  <text x="830" y="284" fill="#7b9fd4" font-size="10" font-family="system-ui,sans-serif">Fallback: 8B model</text>
+  <text x="830" y="300" fill="#7b9fd4" font-size="10" font-family="system-ui,sans-serif">Logging: automatic</text>
+
+  <!-- Caption -->
+  <text x="480" y="490" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui,sans-serif">One config object · Zero changes to your business logic · Full resilience in production</text>
+  <text x="480" y="506" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui,sans-serif">Portkey handles every failure path — your app always gets a response</text>
+</svg>

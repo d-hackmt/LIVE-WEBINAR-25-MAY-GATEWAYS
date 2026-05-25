@@ -1,0 +1,46 @@
+INTERESTING_QUESTIONS = [
+    "What is the most mind-blowing fact about the universe?",
+    "If you could have dinner with any historical figure, who would it be and why?",
+    "What makes a good leader? Give me 3 key qualities.",
+    "Tell me a fun fact about dolphins.",
+    "Why do we dream? Give me a simple explanation.",
+    "What would happen if humans could photosynthesize like plants?",
+    "Explain the butterfly effect with a fun everyday example.",
+    "What's the science behind why music makes us feel emotions?",
+    "How does the internet actually work? Explain like I'm 10.",
+    "What are 3 habits that could genuinely change someone's life?",
+    "Tell me something surprising about how human memory works.",
+    "What's the biggest unsolved mystery in science right now?",
+    "If animals could vote, which animal would make the best president and why?",
+    "Explain black holes like you're telling a bedtime story.",
+    "What makes humans unique compared to other animals?",
+    "Give me a short, funny story about a time-traveling chef.",
+    "What's one thing about ancient history that would surprise most people?",
+    "Why does time seem to go faster as we get older?",
+    "What would a world without social media look like in 10 years?",
+    "Tell me the most fascinating thing about the deep ocean.",
+]
+
+LOAD_BALANCE_QUESTIONS = [
+    "What makes a great movie?",
+    "Tell me a fun fact about space exploration.",
+    "Why is the sky blue? Simple answer please.",
+    "Give me a motivational quote and explain why it works.",
+    "What is love, scientifically speaking?",
+    "How do airplanes actually stay in the air?",
+    "What's the most dangerous animal on Earth and why?",
+    "Tell me something cool about mathematics that surprises people.",
+    "Why do cats purr? Is it always because they're happy?",
+    "What's the best piece of advice you'd give a 20-year-old?",
+]
+
+RAPID_FIRE_QUESTIONS = [
+    "What's 2+2? Just the number.",
+    "Name one country in Europe.",
+    "What color is the sky?",
+    "Name a fruit.",
+    "What's the capital of France?",
+    "Name an animal that lives in the ocean.",
+    "What season comes after summer?",
+    "Name a programming language.",
+]

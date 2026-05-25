@@ -1,0 +1,5 @@
+streamlit>=1.40.0
+portkey-ai>=1.0.0
+groq>=0.8.0
+python-dotenv>=1.0.0
+streamlit-mermaid>=0.2.0

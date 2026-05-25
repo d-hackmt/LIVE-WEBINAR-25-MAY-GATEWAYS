@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\djadh\\\\Downloads\\\\YT\\\\Portkey gateway\" -Recurse -Force)",
+      "Bash(Select-Object -First 100)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(mkdir -p \"c:\\\\Users\\\\djadh\\\\Downloads\\\\YT\\\\Portkey gateway\\\\modules\\\\demos\")",
+      "Bash(pip install *)",
+      "Bash(python -c \"import streamlit; import portkey_ai; import groq; import streamlit_mermaid; print\\('All imports OK'\\)\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(python -c ' *)",
+      "WebFetch(domain:console.groq.com)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('app.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('modules/utils.py'\\).read\\(\\)\\); print\\('OK'\\)\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\djadh\\Downloads\\YT\\Portkey gateway\\modules"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <marker id="ab" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#7b9fd4"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#22c55e"/>
+    </marker>
+    <marker id="ar" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="600" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="1.5" font-family="system-ui,sans-serif">RATE LIMITING — 429 ABSORBED TRANSPARENTLY</text>
+
+  <!-- Participant boxes: App=140, Portkey=400, LLM=660 -->
+  <rect x="75" y="48" width="130" height="40" rx="6" fill="#1e2235" stroke="#3d5a8a" stroke-width="1.5"/>
+  <text x="140" y="73" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="500" font-family="system-ui,sans-serif">App</text>
+
+  <rect x="335" y="48" width="130" height="40" rx="6" fill="#0d1f3c" stroke="#3b82f6" stroke-width="2"/>
+  <text x="400" y="67" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="600" font-family="system-ui,sans-serif">Portkey</text>
+  <text x="400" y="81" text-anchor="middle" fill="#60a5fa" font-size="10" font-family="system-ui,sans-serif">Gateway</text>
+
+  <rect x="595" y="48" width="130" height="40" rx="6" fill="#1e2235" stroke="#3d5a8a" stroke-width="1.5"/>
+  <text x="660" y="73" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="500" font-family="system-ui,sans-serif">LLM</text>
+
+  <!-- Lifelines -->
+  <line x1="140" y1="90" x2="140" y2="568" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="400" y1="90" x2="400" y2="568" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="660" y1="90" x2="660" y2="568" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- MSG 1: App → Portkey: Burst (y=120) -->
+  <line x1="142" y1="120" x2="398" y2="120" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="270" y="112" text-anchor="middle" fill="#7b9fd4" font-size="11" font-family="system-ui,sans-serif">Burst of requests</text>
+
+  <!-- MSG 2,3,4: Portkey → LLM: Req 1,2,3 (y=155,185,215) -->
+  <line x1="402" y1="155" x2="658" y2="155" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="530" y="148" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">Req 1 → 200 ✓</text>
+
+  <line x1="402" y1="185" x2="658" y2="185" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="530" y="178" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">Req 2 → 200 ✓</text>
+
+  <line x1="402" y1="215" x2="658" y2="215" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="530" y="208" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">Req 3 → 200 ✓</text>
+
+  <!-- MSG 5: LLM → Portkey: 429 (y=255) -->
+  <line x1="658" y1="255" x2="402" y2="255" stroke="#ef4444" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="530" y="248" text-anchor="middle" fill="#ef4444" font-size="11" font-family="system-ui,sans-serif">429 Too Many Requests</text>
+
+  <!-- Note: Retry with backoff (y=270 to 298) -->
+  <rect x="335" y="270" width="130" height="28" rx="4" fill="#111827" stroke="#4b5563" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="400" y="289" text-anchor="middle" fill="#fbbf24" font-size="11" font-family="system-ui,sans-serif">⏳ Retry with backoff</text>
+
+  <!-- MSG 6: Portkey → LLM: Retry (y=340) -->
+  <line x1="402" y1="340" x2="658" y2="340" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="530" y="332" text-anchor="middle" fill="#7b9fd4" font-size="11" font-family="system-ui,sans-serif">Retry request</text>
+
+  <!-- MSG 7: LLM → Portkey: Still 429 (y=382) -->
+  <line x1="658" y1="382" x2="402" y2="382" stroke="#ef4444" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="530" y="375" text-anchor="middle" fill="#ef4444" font-size="11" font-family="system-ui,sans-serif">Still 429</text>
+
+  <!-- Note: Activate Fallback (y=397 to 425) -->
+  <rect x="335" y="397" width="130" height="28" rx="4" fill="#111827" stroke="#4b5563" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="400" y="416" text-anchor="middle" fill="#818cf8" font-size="11" font-family="system-ui,sans-serif">Activate Fallback</text>
+
+  <!-- MSG 8: Portkey → LLM: Fallback model (y=465) -->
+  <line x1="402" y1="465" x2="658" y2="465" stroke="#818cf8" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="530" y="457" text-anchor="middle" fill="#818cf8" font-size="11" font-family="system-ui,sans-serif">Switch to Fallback Model</text>
+
+  <!-- MSG 9: LLM → Portkey: 200 (y=507) -->
+  <line x1="658" y1="507" x2="402" y2="507" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="530" y="500" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">200 Success ✓</text>
+
+  <!-- MSG 10: Portkey → App: delivered (y=549) -->
+  <line x1="398" y1="549" x2="142" y2="549" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="270" y="542" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">Response delivered</text>
+
+  <!-- Caption -->
+  <text x="400" y="588" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui,sans-serif">App code never sees the 429 · Portkey retries and falls back transparently</text>
+</svg>

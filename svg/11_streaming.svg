@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <marker id="ab" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#7b9fd4"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="520" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="1.5" font-family="system-ui,sans-serif">STREAMING — TOKENS ARRIVE IN REAL TIME</text>
+
+  <!-- Participant boxes: App=140, Portkey=400, LLM=660 -->
+  <rect x="75" y="48" width="130" height="40" rx="6" fill="#1e2235" stroke="#3d5a8a" stroke-width="1.5"/>
+  <text x="140" y="73" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="500" font-family="system-ui,sans-serif">App</text>
+
+  <rect x="335" y="48" width="130" height="40" rx="6" fill="#0d1f3c" stroke="#3b82f6" stroke-width="2"/>
+  <text x="400" y="67" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="600" font-family="system-ui,sans-serif">Portkey</text>
+  <text x="400" y="81" text-anchor="middle" fill="#60a5fa" font-size="10" font-family="system-ui,sans-serif">Gateway</text>
+
+  <rect x="595" y="48" width="130" height="40" rx="6" fill="#1e2235" stroke="#3d5a8a" stroke-width="1.5"/>
+  <text x="660" y="73" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="500" font-family="system-ui,sans-serif">LLM</text>
+
+  <!-- Lifelines -->
+  <line x1="140" y1="90" x2="140" y2="488" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="400" y1="90" x2="400" y2="488" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="660" y1="90" x2="660" y2="488" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- MSG 1: App → Portkey: stream=True (y=120) -->
+  <line x1="142" y1="120" x2="398" y2="120" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="270" y="112" text-anchor="middle" fill="#7b9fd4" font-size="11" font-family="system-ui,sans-serif">stream=True</text>
+
+  <!-- MSG 2: Portkey → LLM: forward streaming (y=162) -->
+  <line x1="402" y1="162" x2="658" y2="162" stroke="#7b9fd4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="530" y="154" text-anchor="middle" fill="#7b9fd4" font-size="11" font-family="system-ui,sans-serif">Forward streaming request</text>
+
+  <!-- MSG 3: LLM → Portkey: chunk 1 (y=210) -->
+  <line x1="658" y1="210" x2="402" y2="210" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="530" y="203" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">token chunk 1</text>
+
+  <!-- MSG 4: Portkey → App: chunk 1 (y=245) -->
+  <line x1="398" y1="245" x2="142" y2="245" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="270" y="238" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">token chunk 1 ▸ user sees text</text>
+
+  <!-- MSG 5: LLM → Portkey: chunk 2 (y=290) -->
+  <line x1="658" y1="290" x2="402" y2="290" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="530" y="283" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">token chunk 2</text>
+
+  <!-- MSG 6: Portkey → App: chunk 2 (y=325) -->
+  <line x1="398" y1="325" x2="142" y2="325" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="270" y="318" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">token chunk 2 ▸ more text shown</text>
+
+  <!-- MSG 7: LLM → Portkey: more chunks (y=368, dashed) -->
+  <line x1="658" y1="368" x2="402" y2="368" stroke="#22c55e" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#ag)"/>
+  <text x="530" y="361" text-anchor="middle" fill="#4ade80" font-size="11" font-family="system-ui,sans-serif">... more chunks ...</text>
+
+  <!-- MSG 8: Portkey → App: streaming complete (y=410) -->
+  <line x1="398" y1="410" x2="142" y2="410" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="270" y="403" text-anchor="middle" fill="#22c55e" font-size="11" font-family="system-ui,sans-serif">Stream complete ✓</text>
+
+  <!-- Note on Portkey: logged (y=425 to 453) -->
+  <rect x="335" y="425" width="130" height="28" rx="4" fill="#1a1040" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="400" y="444" text-anchor="middle" fill="#a78bfa" font-size="11" font-family="system-ui,sans-serif">Full log in dashboard</text>
+
+  <!-- Caption -->
+  <text x="400" y="494" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui,sans-serif">User reads while model generates · All gateway features still apply · Full request logged on completion</text>
+</svg>
